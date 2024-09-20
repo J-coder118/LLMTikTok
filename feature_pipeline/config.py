@@ -10,7 +10,7 @@ class AppSettings(BaseSettings):
     _file_path: str = 'MattFarmerAI-TikTok-Profile-Scripts-analytics.csv'
 
     OPENAI_MODEL_ID: str = "gpt-4-1106-preview"
-    OPENAI_API_KEY: str = "sk--wgT5Os0yh65yiaLY39ycJii98y9zQ6Y4alSi4dQ48T3BlbkFJHZHitsUUCDO48X3MDSWMFdtpeotEy71XvyQMBpf8cA"
+    OPENAI_API_KEY: str = ""
 
     # QdrantDB config
     QDRANT_DATABASE_HOST: str = "localhost"
