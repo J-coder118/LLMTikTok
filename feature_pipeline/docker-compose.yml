@@ -6,19 +6,5 @@ services:
       - "6333:6333"
     volumes:
       - qdrant_storage:/qdrant/storage
-
-  # app:
-  #   build: .
-  #   container_name: bytewax_app
-  #   depends_on:
-  #     - qdrant
-  #   volumes:
-  #     - .:/app
-  #     - ./sdb/MattFarmerAI-TikTok-Profile-Scripts-analytics.csv:/app/MattFarmerAI-TikTok-Profile-Scripts-analytics.csv
-  #   environment:
-  #     OPENAI_API_KEY: "sk--wgT5Os0yh65yiaLY39ycJii98y9zQ6Y4alSi4dQ48T3BlbkFJHZHitsUUCDO48X3MDSWMFdtpeotEy71XvyQMBpf8cA"  # Add this line
-    
-  #   command: python main.py
-
 volumes:
   qdrant_storage:
