@@ -1,7 +1,7 @@
 from typing import Optional, Tuple
 from datetime import datetime
 
-from models.base import VectorDBDataModel
+from model.base import VectorDBDataModel
 
 
 class TikTokProfileModel(VectorDBDataModel):

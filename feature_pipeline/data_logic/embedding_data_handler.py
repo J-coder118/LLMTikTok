@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
-from models.base import DataModel
-from models.chunk import TikTokProfileChunkModel
-from models.embedded_chunk import (
+from model.base import DataModel
+from model.chunk import TikTokProfileChunkModel
+from model.embedded_chunk import (
     TikTokProfileEmbeddedChunkModel
 )
 from utils.embeddings import embedd_text

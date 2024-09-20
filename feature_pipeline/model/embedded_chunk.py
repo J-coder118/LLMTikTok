@@ -1,7 +1,7 @@
-from typing import Tuple
+from typing import Tuple, Dict
 import numpy as np
-
-from models.base import VectorDBDataModel
+from datetime import datetime
+from model.base import VectorDBDataModel
 
 class TikTokProfileEmbeddedChunkModel(VectorDBDataModel):
     """
@@ -26,7 +26,7 @@ class TikTokProfileEmbeddedChunkModel(VectorDBDataModel):
     class Config:
         arbitrary_types_allowed = True
 
-    def to_payload(self) -> Tuple[str, np.ndarray dict]:
+    def to_payload(self) -> Tuple[str, Dict[str, np.ndarray]]:
         data = {
             "views": self.views,
             "comments": self.comments,

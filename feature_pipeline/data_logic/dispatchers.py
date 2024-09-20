@@ -1,15 +1,15 @@
 from utils.logging import get_logger
 
-from data_logic.chunking_data_handlers import (
+from data_logic.chunking_data_handler import (
     ChunkingDataHandler,
     TikTokProfileChunkingHandler,
 )
-from data_logic.embedding_data_handlers import (
+from data_logic.embedding_data_handler import (
     EmbeddingDataHandler,
     TikTokProfileEmbeddingHandler,
 )
-from models.base import DataModel
-from models.documents import TikTokProfileModel
+from model.base import DataModel
+from model.documents import TikTokProfileModel
 
 logger = get_logger(__name__)
 

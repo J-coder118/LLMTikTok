@@ -1,6 +1,6 @@
 from typing import Optional
-from models.base import DataModel
-
+from model.base import DataModel
+from datetime import datetime
 class TikTokProfileChunkModel(DataModel):
     """
     Data model for TikTok profile chunk data

@@ -3,8 +3,8 @@ from qdrant_client.http.api_client import UnexpectedResponse
 from qdrant_client.models import Batch
 
 from utils.logging import get_logger
-from db import QdrantDatabaseConnector
-from models.base import VectorDBDataModel
+from ddb import QdrantDatabaseConnector
+from model.base import VectorDBDataModel
 
 logger = get_logger(__name__)
 

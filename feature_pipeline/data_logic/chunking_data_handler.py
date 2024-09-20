@@ -1,9 +1,9 @@
 import hashlib
 from abc import ABC, abstractmethod
 
-from models.base import DataModel
-from models.chunk import TikTokProfileChunkModel
-from models.documents import TikTokProfileModel
+from model.base import DataModel
+from model.chunk import TikTokProfileChunkModel
+from model.documents import TikTokProfileModel
 from utils.chunking import chunk_text
 
 
@@ -32,8 +32,8 @@ class TikTokProfileChunkingHandler(ChunkingDataHandler):
                 comments=data_model.comments,
                 shares=data_model.shares,
                 likes=data_model.likes,
-                bookmark=data_model
-                duration=data_model
+                bookmark=data_model,
+                duration=data_model,
                 url=data_model.url,
                 caption=data_model.caption,
                 chunk_id=hashlib.md5(chunk.encode()).hexdigest(),

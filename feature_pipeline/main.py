@@ -1,8 +1,9 @@
+import logging
 import bytewax.operators as op
 from bytewax.dataflow import Dataflow
 
 from ddb import QdrantDatabaseConnector
-from sdb import csv.csv_source
+from sdb.csv import csv_source
 
 from data_flow.stream_output import QdrantOutput
 from data_logic.dispatchers import (
@@ -11,11 +12,20 @@ from data_logic.dispatchers import (
     EmbeddingDispatcher,
 )
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 connection = QdrantDatabaseConnector()
 
 flow = Dataflow("Streaming ingestion pipeline")
 
-stream = op.input("input", flow, csv_source)
+def log_stage(stage_name):
+    def log(data):
+        logger.info(f"{stage_name}: {data}")
+        return data
+    return log
+
+stream = op.input("input", flow, lambda: iter(csv_source))
 # stream = op.map("raw dispatch", stream, RawDispatcher.handle_mq_message)
 # stream = op.map("clean dispatch", stream, CleaningDispatcher.dispatch_cleaner)
 op.output(
@@ -32,3 +42,5 @@ op.output(
     stream,
     QdrantOutput(connection=connection, sink_type="vector"),
 )
+
+flow.run()
