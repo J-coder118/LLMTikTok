@@ -73,13 +73,13 @@ class InferenceTemplate(BasePromptTemplate):
     Question: {question}
     """
 
-    rag_prompt: str = """ You are a specialist in technical content writing. Your task is to create technical content based on a user query given a specific context 
-    with additional information consisting of the user's previous writings and his knowledge.
+    rag_prompt: str = """ You are a specialist in technical content writing. Your task is to create great content based on a user query given a specific context 
+    with additional information consisting of the user's relevance and user's preference.
     
     Here is a list of steps that you need to follow in order to solve this task:
     Step 1: You need to analyze the user provided query : {question}
     Step 2: You need to analyze the provided context and how the information in it relates to the user question: {context}
-    Step 3: Generate the content keeping in mind that it needs to be as cohesive and concise as possible related to the subject presented in the query and similar to the users writing style and knowledge presented in the context.
+    Step 3: Generate the correct content keeping in mind that it needs to be as cohesive and concise as possible related to the subject presented in the query and similar to the users preference in the context.
     """
 
     def create_template(self, enable_rag: bool = True) -> PromptTemplate:

@@ -1,7 +1,7 @@
 import concurrent.futures
 
-import core.logger_utils as logger_utils
-from core.db.qdrant import QdrantDatabaseConnector
+import logging
+from feature_pipeline.ddb import QdrantDatabaseConnector
 from qdrant_client import models
 from sentence_transformers.SentenceTransformer import SentenceTransformer
 
@@ -11,7 +11,8 @@ from rag.reranking import Reranker
 from rag.self_query import SelfQuery
 from config import settings
 
-logger = logger_utils.get_logger(__name__)
+logger = logging.getLogger(__name__)
+
 
 
 class VectorRetriever:

@@ -1,0 +1,13 @@
+bytewax
+qdrant-client
+structlog
+pydantic
+pydantic_settings
+pandas
+duckdb
+sqlalchemy
+langchain_openai
+langchain
+sentence-transformers
+semantic-router
+streamlit

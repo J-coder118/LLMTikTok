@@ -1,8 +1,8 @@
 from langchain_openai import ChatOpenAI
 
-from llm_components.chain import GeneralChain
-from llm_components.prompt_templates import QueryExpansionTemplate
-from config import settings
+from llm.chain import GeneralChain
+from llm.prompt_templates import QueryExpansionTemplate
+from feature_pipeline.config import settings
 
 
 class QueryExpansion:
