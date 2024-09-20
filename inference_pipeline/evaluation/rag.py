@@ -1,7 +1,7 @@
 from langchain_openai import ChatOpenAI
 
 import llm as templates
-from llm import GeneralChain
+from llm.chain import GeneralChain
 from config import settings
 
 

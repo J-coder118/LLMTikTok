@@ -2,7 +2,7 @@ from langchain_openai import ChatOpenAI
 
 from llm.chain import GeneralChain
 from llm.prompt_templates import QueryExpansionTemplate
-from feature_pipeline.config import settings
+from config import settings
 
 
 class QueryExpansion:

@@ -1,8 +1,13 @@
 from semantic_router.layer import RouteLayer
 from semantic_router import Route
 from langchain.encoders import OpenAIEncoder
+import os
+from config import settings
 # we could use this as a guide for our chatbot to avoid political
 # conversations
+
+os.environ["OPENAI_API_KEY"] = settings.OPENAI_API_KEY
+
 semanticRag = Route(
     name="SemanticRAG",
     utterances=[

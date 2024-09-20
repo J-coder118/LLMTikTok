@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI
 import llm as templates
-from llm import GeneralChain
+from llm.chain import GeneralChain
 from config import settings
 
 import pandas as pd
@@ -13,7 +13,7 @@ class CSVDuckDBSink:
     path = settings._file_path
 
     def __init__(self):
-        self.df = pd.read_csv(self.path)
+        self.df = pd.read_csv(self.path, encoding="latin1")  # Specify the encoding
         self.con = duckdb.connect(':memory:')  # Create an in-memory DuckDB database
         self.con.register('TikToktable', self.df)
 

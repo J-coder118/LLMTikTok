@@ -2,7 +2,7 @@ from langchain_openai import ChatOpenAI
 from llm.chain import GeneralChain
 from llm.prompt_templates import RerankingTemplate
 
-from feature_pipeline.config import settings
+from config import settings
 
 
 class Reranker:

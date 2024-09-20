@@ -1,12 +1,12 @@
 import pandas as pd
 from langchain_openai import ChatOpenAI
 from llm.chain import GeneralChain
-from evaluation import evaluate_llm
+from evaluation import evaluate_rag
 from llm.prompt_templates import InferenceTemplate
 # from monitoring import PromptMonitoringManager
 from rag.retriever import VectorRetriever
 from textTosql.txtSql import  csvRetriever
-from router import routeLayer
+from router.router import routeLayer
 from feature_pipeline.config import settings
 
 
@@ -64,7 +64,7 @@ class LLMTikTok:
         answer = response[0]["content"][0]
 
         if enable_evaluation is True:
-            evaluation_result = evaluate_llm(query=query, output=answer)
+            evaluation_result = evaluate_rag(query=query, output=answer)
         else:
             evaluation_result = None
 

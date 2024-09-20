@@ -1,11 +1,10 @@
 import concurrent.futures
 
 import logging
-from feature_pipeline.ddb import QdrantDatabaseConnector
+from ddb import QdrantDatabaseConnector
 from qdrant_client import models
 from sentence_transformers.SentenceTransformer import SentenceTransformer
 
-import utils
 from rag.query_expanison import QueryExpansion
 from rag.reranking import Reranker
 from rag.self_query import SelfQuery
