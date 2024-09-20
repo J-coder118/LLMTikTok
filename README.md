@@ -24,4 +24,4 @@
   - Increased Customer Satisfaction
   - Data-Driven Decision Making
 
-    ![Alt text](data/result.png)
+    ![Alt text](inference_pipeline/result.png)
